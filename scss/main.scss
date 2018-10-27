@@ -2,23 +2,38 @@
 
 body{
     margin: 0;
-
+    
 }
 
 
 header{
-    background-color: coral;
+    background-color: #ffbf00;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
+    width: 100%;
+    position: fixed;
     
-
+    
+    
+    div{
+        width: 50px;
+        
+        img{
+            width: 100%;
+            padding: 10px;
+            filter: invert(1);
+        }
+        
+    }
+    
     #menu-hamburguer{
         position: relative;
-
+        
         width: 50px;
         height: 50px;
-      
+        
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -31,113 +46,178 @@ header{
     }
 }
 
-    
+
 #esconde {
     background-color: rgba(230, 230, 230, 0.836);
     box-shadow: 1px 1px rgba(0, 0, 0, 0.30);
-    display: none;
-    position: fixed;
+    z-index: -1;
+    transform: translateY(-100%);
+    position: absolute;
     right: 0;
-    z-index: 1;
-    width: 50%;
+    width: 100%;
     height: 100%;
+    transition: 1s;
 }
 
 #esconde.visible {
-    display: inline;
+    transform: translateY(0);
+    
 }
 
-    .infos{
+.tracinho {
+    background-color: white;
+    height: 2px;
+    width: 80%; 
+    
+}
+
+.tracinho.visible {
+    position: absolute;
+    
+    transition: 0.5s;
+}
+
+.tracinho.visible:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.tracinho.visible:nth-child(2) {
+    display: none;
+}
+
+.tracinho.visible:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+
+.infos {
+    text-decoration: none;
+    color: black;
+    font-size: 18pt;
+    padding: 40px;
+    text-align: center;
+}
+
+
+
+nav{
+    
+    display: none;
+    
+    a{
+        color: white;
         text-decoration: none;
-        color: black;
-        font-size: 18pt;
-        padding: 40px;
-        text-align: center;
+        padding: 0 10px;
+        font-family: 'Niramit', sans-serif;
+        padding: 20px;
     }
-
-
-    .tracinho {
-        background-color: white;
-        height: 2px;
-        width: 80%; 
-
-    }
-
-    .tracinho.visible {
-        position: absolute;
-      
-        transition: 0.5s;
-      }
-      
-      .tracinho.visible:nth-child(1) {
-        transform: rotate(45deg);
-      }
-      
-      .tracinho.visible:nth-child(2) {
-        display: none;
-      }
-      
-      .tracinho.visible:nth-child(3) {
-        transform: rotate(-45deg);
-      }
-      
-
-
-    nav{
-
-        display: none;
-
-        a{
-            color: white;
-            text-decoration: none;
-            padding: 0 10px;
-            font-family: 'Niramit', sans-serif;
-            padding: 20px;
-        }
-    }
-
-
-    div{
-        width: 50px;
-
-        img{
-            width: 100%;
-            padding: 10px
-        }
-
-    }
-
-//.tracinho.visible {
-//     position: absolute;
-
-//     transition: 0.5s;
-//   }
-  
-//   .tracinho.visible:nth-child(1) {
-//     transform: rotate(45deg);
-//   }
-  
-//   .tracinho.visible:nth-child(2) {
-//     display: none;
-//   }
-  
-//   .tracinho.visible:nth-child(3) {
-//     transform: rotate(-45deg);
-//   }
-//
-@media (min-width: 750px){
-
-    header{
-
-        #menu-hamburguer{
-            display: none;
-        }
-
-        nav{
-            display: block;
-        }
-    }
-
-
-
+    
 }
+
+section.banner{
+    background-image: url(../img/capa.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+    
+    div{
+        padding: 170px;
+        
+        
+        
+        
+        h1{
+            margin: 0;
+            color: white;
+            
+            padding: 0 15px;
+            text-align: center;
+            font-size: 45pt;
+            font-family: 'Bitter', serif;
+            border-bottom: 2px solid rgba(230, 230, 230, 0.836);
+            text-shadow: 1px 11px 40px black;
+            
+        }
+        
+        p{
+            color: white;
+            padding: 0 10px;
+            text-align: center;
+            font-size: 13pt;
+            font-family: 'Bitter', serif;      
+            text-shadow: 1px 1px 2px black;
+            
+        }
+        
+        
+        
+        
+    }
+}
+
+section.card{
+
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+
+    div {
+    
+        border-radius: 5px;
+        border: 2px solid gray;
+        width: 25%;
+        height: 30%;
+        padding: 5px;
+        text-align: center;
+}
+}
+//.tracinho.visible {
+    //     position: absolute;
+    
+    //     transition: 0.5s;
+    //   }
+    
+    //   .tracinho.visible:nth-child(1) {
+        //     transform: rotate(45deg);
+        //   }
+        
+        //   .tracinho.visible:nth-child(2) {
+            //     display: none;
+            //   }
+            
+            //   .tracinho.visible:nth-child(3) {
+                //     transform: rotate(-45deg);
+                //   }
+                //
+                @media (min-width: 750px){
+                    
+                    header{
+                        
+                        z-index: 1;
+                        
+                        #menu-hamburguer{
+                            display: none;
+                        }
+                        
+                        nav{
+                            display: block;
+                        }
+                        
+                        
+                        #esconde.visible {
+                            transform: translateY(0);
+                        }
+                        
+                    }
+                    
+                    
+                    #esconde{
+                        display: none;
+            
+                    }
+                    
+                    
+                    
+                    
+                }
+                
