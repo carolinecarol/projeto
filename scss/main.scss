@@ -161,6 +161,14 @@ section.card{
     margin-top: 5px;
     padding-top: 50px;
     padding-bottom: 50px;
+    font-family: 'Bitter', serif;
+     
+    p{
+        display: block;
+        font-size: 12pt;
+        text-align: center;
+        font-family: 'Bitter', serif;
+    }
 
     div {
     
@@ -171,6 +179,11 @@ section.card{
         padding: 5px;
         text-align: center;
 }
+    img{
+        margin-top: 10px;
+        width: 60px;
+        height: 60px;
+    }
 }
 //.tracinho.visible {
     //     position: absolute;
