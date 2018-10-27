@@ -15,11 +15,20 @@ header{
     
     div {
         width: 50px;
-        
+    
         img{
+            vertical-align: top;
+            border:0;
             width: 100%;
             padding: 10px;
             filter: invert(1);
+        }
+
+        p {
+            
+            font-size: 30px;
+            font-family: 'Spicy Rice', cursive;
+            color: whitesmoke;
         }
         
     }
@@ -180,15 +189,18 @@ section.card{
 }
 
 footer{
-    display: flex;
+    
     background-color: #ffbf00;
     color: whitesmoke;
     position: relative;
     margin: 0%;
-    width: 100%;
+    text-align: center;
+    font-family: 'Bitter', serif;
+    padding-top: 50px;
+    padding-bottom: 20px;
     
-    p{
-        
+    p {
+         display: block;
     }
 }
 
