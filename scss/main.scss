@@ -117,15 +117,14 @@ nav{
 section.banner{
     background-image: url(../img/capa.jpg);
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     height: 80vh;
     
     div{
         padding: 170px;
-        
-        
-        
-        
+           
         h1{
             margin: 0;
             color: white;
@@ -160,6 +159,8 @@ section.card{
     display: flex;
     justify-content: space-evenly;
     margin-top: 5px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     div {
     
