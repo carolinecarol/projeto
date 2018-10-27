@@ -2,9 +2,7 @@
 
 body{
     margin: 0;
-    
 }
-
 
 header{
     background-color: #ffbf00;
@@ -15,9 +13,7 @@ header{
     width: 100%;
     position: fixed;
     
-    
-    
-    div{
+    div {
         width: 50px;
         
         img{
@@ -136,7 +132,7 @@ section.banner{
             border-bottom: 2px solid rgba(230, 230, 230, 0.836);
             text-shadow: 1px 11px 40px black;
             
-        }
+    }
         
         p{
             color: white;
@@ -147,9 +143,6 @@ section.banner{
             text-shadow: 1px 1px 2px black;
             
         }
-        
-        
-        
         
     }
 }
@@ -167,17 +160,17 @@ section.card{
         display: block;
         font-size: 12pt;
         text-align: center;
-        font-family: 'Bitter', serif;
     }
 
     div {
     
         border-radius: 5px;
         border: 2px solid gray;
-        width: 25%;
-        height: 30%;
+        width: 30%;
         padding: 5px;
         text-align: center;
+        
+
 }
     img{
         margin-top: 10px;
@@ -185,6 +178,20 @@ section.card{
         height: 60px;
     }
 }
+
+footer{
+    display: flex;
+    background-color: #ffbf00;
+    color: whitesmoke;
+    position: relative;
+    margin: 0%;
+    width: 100%;
+    
+    p{
+        
+    }
+}
+
 //.tracinho.visible {
     //     position: absolute;
     
