@@ -14,20 +14,20 @@ header{
     position: fixed;
     
     div {
-        width: 50px;
+            display: flex; 
+            align-items: center;
     
         img{
-            vertical-align: top;
-            border:0;
-            width: 100%;
-            padding: 10px;
+            width: 17%;
+            height: 17%;
+            padding: 2px;
             filter: invert(1);
             
         }
 
         p {
-            float:left;
-            font-size: 30px;
+            align-items: baseline;   
+            font-size: 35px;
             font-family: 'Spicy Rice', cursive;
             color: whitesmoke;
         }
@@ -99,12 +99,11 @@ header{
 .infos {
     text-decoration: none;
     color: black;
+    font-family: 'Niramit', sans-serif;
     font-size: 18pt;
     padding: 40px;
     text-align: center;
 }
-
-
 
 nav{
     
@@ -113,8 +112,9 @@ nav{
     a{
         color: white;
         text-decoration: none;
-        padding: 0 10px;
+        padding: 0 5px;
         font-family: 'Niramit', sans-serif;
+        font-size: 25px;
         padding: 20px;
     }
     
@@ -179,14 +179,93 @@ section.card{
         width: 30%;
         padding: 5px;
         text-align: center;
-        
-
 }
     img{
         margin-top: 10px;
         width: 60px;
         height: 60px;
     }
+}
+
+section.carousel {
+    margin-top: 5px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+        width: 600px;
+        height: 600px;
+        overflow: hidden;
+        position: relative;
+        display: block;
+
+    div.img-carousel.inner {
+        display: flex;
+        position: absolute;
+        left: -640px;  
+        transition: left 0.25 ease-out;
+    }
+
+    div.next::after, div.prev::after {
+        content: '>';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        background-color: white;
+        width: 20px;
+        height: 70px;
+        font-weight: bold;
+        font-family: 'Spyce+Rice', sans-serif;
+        transform: translateY(-50%);
+        line-height: 3em;
+        box-sizing: border-box;
+        padding: 5px;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: opacity 0.4s linear;
+        
+    }
+
+    div.next:hover::after, div.prev:hover::after{
+        opacity: 1;
+
+    }
+    
+    div.prev::after {
+        content: '<';
+        left: 0;
+    }
+
+    div.bubbles {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 0%;
+        left: 0;
+        right: 0%;
+        margin-bottom: 5px;
+        
+        .bubble {
+            margin:2.5px;
+            background-color: white;
+            border-radius: 100000px;
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            opacity: 0.25;
+            transition: opacity 0.1s linear;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.65;
+            }
+
+            &.active{
+                opacity: 1;
+            }
+
+        }
+    }
+
 }
 
 footer{
