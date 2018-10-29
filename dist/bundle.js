@@ -6,59 +6,18 @@ botaoMenu.onclick = () => {
   escondeMenu.classList.toggle('visible');
   }
   
-let carousels = document.getElementsByClassName('img-carousel');
+  let slideIndex = 0;
+showSlides();
 
-[].forEach.call(carousels, function(c) {
-  let next = c.getElementsByClassName('next')[0],
-    prev = c.getElementsByClassName('prev')[0],
-    bubbles = c.getElementsByClassName('bubbles')[0],
-    inner = c.getElementsByClassName('inner'),
-    img = inner.getElementsByTagName('img'),
-    currentImageIndex = 0,
-    width = 640,
-    bubbles = [],
-
-
-    for (let i = 0; i < img.lenght; i++) {
-      let b = document.createElement('span');
-      b.classList.add('bubbles');
-      bubbles.appenChild(b);
-      bubbles.push(b);
-
-      b.addEventListener('click', function () {
-        currentImageIndex = i;
-        switchImg();
-      });
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
     }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
 
-    function switchImg(){
-      inner.Style.Left = -width * currentImageIndex + 'px';
-    }
-
-      bubbles.forEach(function (b, i) {
-        if (i === currentImageIndex) {
-          b.classList.add('active');
-        } else {
-          b.classList.remove('active');
-        }
-      });
-    
-
-    next.addEventListener('click', function(){
-      currentImageIndex++;
-        if (currentImageIndex >= img.lenght) {
-             currentImageIndex = 0;
-                  }
-        switchImg();
-                });
-    
-    prev.addEventListener('click', function(){
-      currentImageIndex--;
-         if (currentImageIndex < 0) {
-              currentImageIndex = img.lenght - 1;
-              }
-              switchImg();
-            });
-
-            switchImg();
-          });
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
