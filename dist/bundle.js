@@ -11,18 +11,18 @@ let carousels = document.getElementsByClassName('img-carousel');
 [].forEach.call(carousels, function(c) {
   let next = c.getElementsByClassName('next')[0],
     prev = c.getElementsByClassName('prev')[0],
-    bubblesContainer = c.getElementsByClassName('bubble')[0],
+    bubbles = c.getElementsByClassName('bubbles')[0],
     inner = c.getElementsByClassName('inner'),
-    imgs = inner.getElementsByTagName('img'),
+    img = inner.getElementsByTagName('img'),
     currentImageIndex = 0,
     width = 640,
     bubbles = [],
 
 
-    for (let i = 0; i < imgs.lenght; i++) {
+    for (let i = 0; i < img.lenght; i++) {
       let b = document.createElement('span');
       b.classList.add('bubbles');
-      bubblesContainer.appenChild(b);
+      bubbles.appenChild(b);
       bubbles.push(b);
 
       b.addEventListener('click', function () {
@@ -46,7 +46,7 @@ let carousels = document.getElementsByClassName('img-carousel');
 
     next.addEventListener('click', function(){
       currentImageIndex++;
-        if (currentImageIndex >= imgs.lenght) {
+        if (currentImageIndex >= img.lenght) {
              currentImageIndex = 0;
                   }
         switchImg();
@@ -55,7 +55,7 @@ let carousels = document.getElementsByClassName('img-carousel');
     prev.addEventListener('click', function(){
       currentImageIndex--;
          if (currentImageIndex < 0) {
-              currentImageIndex = imgs.lenght - 1;
+              currentImageIndex = img.lenght - 1;
               }
               switchImg();
             });
